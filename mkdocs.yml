@@ -1,15 +1,15 @@
 # Project information
-site_name: Maze Documentation
-site_description: 'Analysis Documentation'
+site_name: Analysis Docs
+site_description: 'Analysis Docs'
 site_author: 'Timothe'
-site_url: 'https://FreelyMovingSetup.github.io/Documentation_center'
+site_url: 'https://Freelymovinganalysis.github.io/.github/index.html'
 
 # Copyright
 copyright: '&copy; 2022 Shulz Lab'
 
 # Repository
 repo_name: '.github'
-repo_url: 'https://github.com/FreelyMovingSetup/Documentation_center'
+repo_url: 'https://github.com/FreelyMovingAnalysis/.github'
 edit_uri: ''
 
 use_directory_urls: false
@@ -19,16 +19,16 @@ docs_dir: 'docs'
 theme: 
     name : material
     palette:
-      - scheme: default
-        toggle:
-          icon: material/toggle-switch-off-outline
-          name: Switch to dark mode
       - scheme: slate
         primary: deep orange
         accent: teal
         toggle:
           icon: material/toggle-switch
           name: Switch to light mode
+      - scheme: default 
+        toggle:
+          icon: material/toggle-switch-off-outline
+          name: Switch to dark mode
         
     features:
         - navigation.tabs
