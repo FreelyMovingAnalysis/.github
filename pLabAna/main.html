@@ -461,16 +461,20 @@
 <p>Creates an object that derivates from an sqlalchemy engine. You can feed it to evey function that takes an engine as argument.
 If you call <code>pLabAna.StaticSQLEngine()</code> from any place in your code, it will actually return the same object (singleton) without re-recreating one.
 This has the benefit of small performance increases.</p>
-<p>!!! warning :
-   On very long sessions, where you stop accessing the database for several hours straight, the connection can be stopped between the object and the database (timeout)
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>On very long sessions, where you stop accessing the database for several hours straight, the connection can be stopped between the object and the database (timeout)
    In that case, you can simply call <code>pLabAna.StaticSQLEngine(regen=True)</code> to get back a new engine and not the one that expired. 
    In that only case, the library is effectively reacreating one object.</p>
 <h3 id="calling-stored-procedures-and-functions">Calling stored procedures and functions :</h3>
 <p>One more advantage of this homemade class, is also that it encapsulates an methods, all stored procedures and functions defined in the mysql database.</p>
 <p>They can be called simply by writing : <code>engine = pLabAna.StaticSQLEngine()</code> and <code>result = engine.myStoredProcedure(arg1, arg2, ...etc)</code></p>
-<p>!!! note: Example
-    For example, in the case of the maze database model, you can call : <code>duration = engine.session_duration(session_id)</code> and get the duration in a single line.
-    Here the heavylifting is done in mysql rather than python (wich is the whole advantage of using a database, with the fact that data is well organized without a folder specific location)</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>For example, in the case of the maze database model, you can call : <code>duration = engine.session_duration(session_id)</code> and get the duration in a single line.
+Here the heavylifting is done in mysql rather than python (wich is the whole advantage of using a database, with the fact that data is well organized without a folder specific location)</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Always remember : if you find yourself formatting the data you recieve in python, you're goign the wrong way. It should be done in the database. 
